@@ -21,3 +21,7 @@ const showContent = (link) => {
 // bij een nieuwe sessie, meteen url updaten
 history.replaceState({ link: "gent" }, null, "monopoly-gent");
 document.title = "Monopoly Gent";
+
+window.addEventListener("popstate", (e) => {
+  showContent(e.state.link);
+});
